@@ -46,7 +46,7 @@ parity(43) # 43 is 101011; Yields an output of '43 -> 4 -> Even'
 # until we determine the parity at the least significant remnant.
 
 # Say x = 15 (1111)
-def tarity(x):
+def qarity(x):
     x ^= x >> 32 # (1111 XOR 1111 >> 32 bits = 1111 XOR 0000, x = 15)
     x ^= x >> 16 # (1111 XOR 1111 >> 16 bits = 1111 XOR 0000, x = 15)
     x ^= x >> 8 # (1111 XOR 1111 >> 8 bits = 1111 XOR 0000, x = 15)
@@ -56,3 +56,17 @@ def tarity(x):
     print(x)
     
     return x & 0x1 # x = 10 which is 1010, 1010 AND 0001 = 0
+  
+  
+# 4.2 Swap Bits
+
+# A 64-bit integer can be viewed as an array of 64 bits, with the bit at index 0 corresponding to the least significant big (LSB), 
+# and the bit at the index 63 corresponding to the most significant bit (MSB). 
+# Implement code that takes a 64-bit integer as input and swaps the bits at indices i and j.
+
+def bitSwap(x, i, j):
+  # Extract
+  if (x >> i) & 1 != (x >> j) & 1:
+    bit_mask = (1 << i) | (1 >> j)
+    x ^= bit_mask
+  return x
