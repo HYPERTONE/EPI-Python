@@ -9,8 +9,17 @@ def countBits(x):
   numBits = 0
   
   while x:
-    numBits += x & 1
-    x >>= 1
+    numBits += x & 1 # AND our input with 0001, then increase numBits by the result
+    x >>= 1          # Shift our input one position to the right and repeat the process
   return numBits
 
-countBits(42)
+countBits(42) #Yields an output of 3
+
+# 42 -> 101010 AND 000001 yields 0, numBits = 0 + 0
+#    -> 010101 AND 000001 yields 1, numbits = 0 + 1
+#    -> 001010 AND 000001 yields 0, numbits = 1 + 0
+#    -> 000101 AND 000001 yields 1, numbits = 1 + 1
+#    -> 000010 AND 000001 yields 0, numbits = 2 + 0
+#    -> 000001 AND 000001 yields 1, numbits = 2 + 1 = 3
+
+
