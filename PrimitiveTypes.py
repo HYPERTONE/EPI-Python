@@ -65,8 +65,17 @@ def qarity(x):
 # Implement code that takes a 64-bit integer as input and swaps the bits at indices i and j.
 
 def bitSwap(x, i, j):
-  # Extract
+  # Check to see if i and j are the same. If they are, then there is no reason to swap them.
   if (x >> i) & 1 != (x >> j) & 1:
-    bit_mask = (1 << i) | (1 >> j)
+    bit_mask = (1 << i) | (1 << j)
     x ^= bit_mask
-  return x
+    return x
+
+bitSwap(73, 1, 6) # If x = 73, i (MSB) has index 1, and j (LSB) has index 6 --> Output is 66
+
+  # 73 -> 1001001 (Our goal is to swap index 1 and 6 which should give 0001011)
+  # 1001001 >> 1 = 0100100 AND 01 = 0 [IS NOT EQUAL TO] 1001001 >> 6 = 0000001 AND 01 = 1 [TRUE - THEY ARE NOT EQUAL]
+  # bit_mask = (01 << 1) | (01 << 6)
+  # bit_mask = (0010) | (01000000)
+  # bit_mask = 1000010 = 66
+  # x XOR bit_mask = 1001001 XOR 001011 -> 0001011 = 11
