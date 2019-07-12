@@ -79,3 +79,19 @@ bitSwap(73, 1, 6) # If x = 73, i (MSB) has index 1, and j (LSB) has index 6 --> 
   # bit_mask = (0010) | (01000000)
   # bit_mask = 1000010 = 66
   # x XOR bit_mask = 1001001 XOR 001011 -> 0001011 = 11
+
+  
+# Reverse Bits
+#Write a program that takes a 64-bit unsigned integer and returns the 64-bit unsigned integer consisting 
+#of the bits of the input in reverse order.
+
+def reverseBit(num):
+    result = 0
+    while num:
+        result = (result << 1) + (num & 1)
+        num >>= 1
+    return result
+# 
+# The goal here is to AND our num by 1 and then have it shifted to the LEFT one place while
+# num is being shifted to the RIGHT. Every time we AND something, we will get a 1 when num had a 1,
+# and a 0 when num had a zero. The loop terminates because num gets shifted until it becomes 0.
