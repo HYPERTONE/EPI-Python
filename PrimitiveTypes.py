@@ -105,8 +105,35 @@ def reverseBit(num):
 
 # Write a program that multiplies two nonnegative integers. 
 
-# 13 = 1101
-# 9  = 1001
+# To multiply x by y we initialize the result to 0 and iterate through the bits of x, adding 2^k*y to the result
+# if the kth bit of x is . The value 2^k*y can be computed by left-shifting y by k.
+ 
+# 9 = 1001 = x
+# 5 = 0101 = y
 # Result = 0
-# Since the LSB of 13 is 1,
+# Iterate x:
+# 1st (LSB of x) = 1, R = 0101                2^0*y = 1 * y = 0101
+# 2nd (0) = Do nothing                    
+# 3rd (0) = Do nothing
+# 4th (1) = left shift y by 3 => 0101000      2^3*y = 8 * y => 1000 * y => left shift y by 3 => 0101000
+# R = 0101 + 0101000 = 0101101 = 45
+
+def multiply(x, y):
+    def add(a, b):
+        running_sum, carryin, k, temp_a, temp_b = 0, 0, 1, a, b
+        while temp_a or temp_b:
+            ak, bk = a & k, b & k
+            carryout = (ak & bk) | (ak & carryin) | (bk & carryin)
+            running_sum |= ak ^ bk ^ carryin
+            carryin, k, temp_a, temp_b = (carryout << 1, k << 1, temp_a >> 1,
+                                          temp_b >> 1)
+        print(running_sum | carryin)  
+        return running_sum | carryin
+    
+    running_sum = 0
+    while x:    # Examines each bit of x
+        if x & 1:
+            running_sum = add(running_sum, y)
+        x, y = x >> 1, y << 1
+    return running_sum
 
