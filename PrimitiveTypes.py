@@ -137,3 +137,27 @@ def multiply(x, y):
         x, y = x >> 1, y << 1                 # x gets shifted right to iterate the next bit
     return running_sum                        # y gets shifted left so we can indent 2^k*y spaces
 
+
+  # 4.6 Compute x/y
+  
+  # Given two positive integers, compute their quotient, using only the addition, subtraction, and shifting operators.
+  
+  # We can compute the largest k such that 2^k*y <= x, subtract 2^k*y from x, and add 2^k to the quotient.
+  # For example, if x = 1011 and y = 10, then
+  # k = 2 since 2^3*2 = 8 <= 11 and 2^3*2 > 11.
+  # We subtract 1000 from 1011 to get 11, add 2^k = 2^2 = 0100 to the quotient, and continue by updating x to 0011.
+  
+  def divide (x, y):
+    result, power = 0, 32
+    y_power = y << power
+    while x >= y:
+        while y_power > x:
+            y_power >>= 1
+            power -= 1
+            
+        result += 1 << power
+        x -= y_power
+    return result
+  
+  
+  
