@@ -176,3 +176,13 @@ def multiply(x, y):
 # otherwise -> x * [x^(y/2)]^2
 
 # But when y is negative, we replace x with 1/x and y with -y
+
+def power(x: float, y: int) -> float:
+    result, power = 1.0, y
+    if y < 0:
+        power, x = -power, 1.0 / x
+    while power:
+        if power & 1:
+            result *= x
+        x, power = x * x, power >> 1
+    return result
