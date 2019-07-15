@@ -178,11 +178,11 @@ def multiply(x, y):
 # But when y is negative, we replace x with 1/x and y with -y
 
 def power(x: float, y: int) -> float:
-    result, power = 1.0, y
+    result, power = 1.0, y              # set result to 1.0 to ensure our final value is a float
     if y < 0:
-        power, x = -power, 1.0 / x
+        power, x = -power, 1.0 / x      # check if y is a negative value and set values accordingly
     while power:
-        if power & 1:
-            result *= x
-        x, power = x * x, power >> 1
+        if power & 1:                   # once power AND 0001 becomes true, we have reached the end of the bit shift of y
+            result *= x                 # here we just output a double
+        x, power = x * x, power >> 1    # we keep shifting power to the right until y reaches its limit
     return result
