@@ -105,5 +105,8 @@ def reverseBit(num):
 
 # Write a program that multiplies two nonnegative integers. 
 
-
+# 13 = 1101
+# 9  = 1001
+# Result = 0
+# Since the LSB of 13 is 1,
 
