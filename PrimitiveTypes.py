@@ -95,3 +95,15 @@ def reverseBit(num):
 # The goal here is to AND our num by 1 and then have it shifted to the LEFT one place while
 # num is being shifted to the RIGHT. Every time we AND something, we will get a 1 when num had a 1,
 # and a 0 when num had a zero. The loop terminates because num gets shifted until it becomes 0.
+
+
+
+# 4.5 Compute x*y without arithmetical operators
+
+# Sometimes the processors used in ultra low-power devices such as hearing aids do not have dedicated hardware for performing
+# multiplication. A program that needs to perform multiplication must do some explicitly using lower-level primitives.
+
+# Write a program that multiplies two nonnegative integers. 
+
+
+
