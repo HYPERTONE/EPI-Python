@@ -134,6 +134,6 @@ def multiply(x, y):
     while x:    # Examines each bit of x
         if x & 1:
             running_sum = add(running_sum, y)
-        x, y = x >> 1, y << 1
-    return running_sum
+        x, y = x >> 1, y << 1                 # x gets shifted right to iterate the next bit
+    return running_sum                        # y gets shifted left so we can indent 2^k*y spaces
 
