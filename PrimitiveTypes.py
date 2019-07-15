@@ -160,4 +160,19 @@ def multiply(x, y):
     return result
   
   
-  
+# 4.7 Compute pow(x, y)  
+
+# Write a program that takes a double x and an integer y and returns x^y. You can ignore overflow and underflow.
+
+# The key to being efficient at this is to do more with less multiplication intervals.
+# For 1.1^21, instead of taking 1.1 and multiplying it by itself 20 times, we could multiply
+# 1.1 by 1.1^2 = 1.21 * 10 times itself.
+
+# Say we wanted to calculate x^10 = x^(1010) base 2. (Note that 10 -> 1010 and 5 -> 0101)
+# x^1010 = x^(0101 + 0101) = x^0101 * x^0101
+# Similarily, x^(0101) = x^(0100 + 0001) = x^0100 * x^0001 = x^0010 * x^0010 * x^0001
+
+# Generalizing, if the LSB of y = 0 -> the result is [x^(y/2)]^2
+# otherwise -> x * [x^(y/2)]^2
+
+# But when y is negative, we replace x with 1/x and y with -y
