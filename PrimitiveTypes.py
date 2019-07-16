@@ -229,3 +229,12 @@ def palindrome(x: int) -> bool:
         return True
     else:
         return False
+
+ def strPalindrome(x: int):
+
+    if str(x) == str(x)[::-1]:
+        return True
+    else:
+        return False
+   
+  
