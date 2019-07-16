@@ -208,3 +208,24 @@ def reverseDigits(k: int) -> int:
         return -result
     else:
         return result
+
+  
+# 4.9 Check If A Decimal Integer is a Palindrome
+
+# A palindromic string is one which reads the same forwards and backwards.
+
+# Write a program that takes an integer and determines if that integer's representation as a decimal string is a 
+# palindrome.
+
+def palindrome(x: int) -> bool:
+    temp = x
+    rev = 0
+    
+    while temp != 0:
+        rev = (rev * 10) + (temp % 10) 
+        temp = temp // 10
+
+    if rev == x:
+        return True
+    else:
+        return False
