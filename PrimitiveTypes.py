@@ -186,3 +186,25 @@ def power(x: float, y: int) -> float:
             result *= x                 # here we just output a double
         x, power = x * x, power >> 1    # we keep shifting power to the right until y reaches its limit
     return result
+
+
+# 4.8 Reverse Digits
+
+# Write a program which takes an integer and returns the integer corresponding to the digits of the input written in reverse
+# order. For example, the reverse of 42 is 24 and the reverse of -314 is -413.
+
+# If our input is k and is set to 1132.
+# 1132 / 10 -> 113 with remainder 2
+# 113 / 10  -> 11  with remainder 3
+# 11 / 10   -> 1   with remainder 1
+# 1 / 10    -> 1   with remainder 0
+
+def reverseDigits(k: int) -> int:
+    result, k_remaining = 0, abs(k)             # create a place holder and make input positive
+    while k_remaining:
+        result = result * 10 + k_remaining % 10 
+        k_remaining //= 10                      # floor divide the remainder by 10 
+    if k < 0:
+        return -result
+    else:
+        return result
