@@ -14,4 +14,21 @@ def evenOdd(A):
             
 sample = [5, 6, 10, 5, 7, 1, 2]
 evenOdd(sample)
-print(sample) -> [2, 6, 10, 7, 1, 5, 5]
+print(sample) # -> [2, 6, 10, 7, 1, 5, 5]
+
+
+# 5.1 The Dutch National Flag Problem
+
+# Write a program that takes an array A and an index i into A, and rearranges the elements such that all elements
+# less than A[i] (the 'pivot') appear first, followed by elements equal to the pivot, followed by elements greater
+# than the pivot.
+
+def dutch(A, ind):
+    new = []
+    pivot = A[ind]
+    for item in A:
+        if item < pivot:
+            print(item)
+        
+l = [0, 1, 2, 0, 2, 1, 1]
+dutch(l, 4
