@@ -53,3 +53,49 @@ C = [9, 3, 1, 6, 3, 2, 3, 6, 9, 4]
 # represent the integer D + 1.
 
 # For example, if D = [1, 2, 9] then we should update the array to [1, 3, 0]
+
+def plusOne(A):
+    
+    s = [str(i) for i in A]         # Convert the integer to a string
+    result = int("".join(s)) + 1    # Join the string to an int; add 1
+    
+    return result
+
+def plusOne2(B):
+    result = []
+    for index, value in enumerate(B[::-1]):     # No conversion here, just inverse the list and multiply 
+        result.append(value * 10 ** index)      # by its value and 10^index
+    
+    return sum(result) + 1
+
+def plusOne3(C):
+    result = int("".join(map(str, C)))          # Similar to plusOne, map the str function with the list and join the values
+    
+    return result + 1
+
+# 5.3 - Multiply Two Arbitrary-Precision Integers
+
+# Certain applications require arbitrary precision arithmetic. One way to achieve this is to use arrays to represent integers,
+# e.g., with one digit per array entry, with the most significant digit appearing first, and a negative leading digit denoting
+# a negative integer. For example, [-7, 6, 1, 8] represents -7618.
+
+# Write a program that takes two arrays representing integers, and returns an integer representing their product.
+
+def multiplyArrays(A, B):
+    
+    
+    resultA = int("".join(map(str, A)))
+    resultB = int("".join(map(str, B)))
+    
+    return resultA * resultB
+
+# It's kind of strange that the authors say not to 'reinvent the wheel' yet they essentially rewrite certain built in functions.
+
+
+# 5.4 - Advancing Through An Array
+
+# 
+
+# 5.5 - Delete Duplicates From A Sorted Array
+
+# 
