@@ -45,3 +45,11 @@ B = [0, 1, 2, 0, 2, 1, 1]
 C = [9, 3, 1, 6, 3, 2, 3, 6, 9, 4]
 
 # Flag(B, 1) -> [0, 0, 1, 1, 1, 2, 2]
+
+
+# 5.2 - Increment An Arbitrary-Precision Integer
+
+# Write a program which takes an input of digits encoding a nonnegative decimal integer D and updates the array to
+# represent the integer D + 1.
+
+# For example, if D = [1, 2, 9] then we should update the array to [1, 3, 0]
