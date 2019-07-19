@@ -94,8 +94,18 @@ def multiplyArrays(A, B):
 
 # 5.4 - Advancing Through An Array
 
-# 
+# In a particular board game, a player has to try and advance through a sequence of positions. Each position has a nonnegative integer associated with it, representing the maximum you can advance from that position in one move.
+
+# You begin at the first position, and win by getting to the last position. For example, let A = [3,3,1,0,2,0,1] represent the board game. The game can be won byh the following sequence of advances: take 1 step from A[0] to A[1], then 3 steps from A[1] to A[4], then 2 steps from A[4] to A[6], which is the last position. 
+
+
+
+
 
 # 5.5 - Delete Duplicates From A Sorted Array
 
-# 
+# This problem is concerned with deleting repeated elements from a sorted array. For example, for the array A = [2,3,5,5,7,11,11,11,13], then after deletion, the array is [2,3,5,7,11,13,0,0,0]. After deleting repeated elements, there are 6 valid entries.
+
+# Write a program which takes as input a sorted array and updates it so that all duplicates have been removed and the remaining elements have been shifted left to fill the emptied indices.
+
+
