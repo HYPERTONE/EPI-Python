@@ -114,4 +114,21 @@ def multiplyArrays(A, B):
 # Write a program which takes as input a sorted array and updates it so that all duplicates have been removed 
 # and the remaining elements have been shifted left to fill the emptied indices.
 
-
+def delDupes(A):
+    
+    increment = 0
+    duplicates = []
+    for i, j in enumerate(A[:-1]):
+        if A[i + 1] == j:
+#             print('duplicate of {} at index {}'.format(j, i))
+            duplicates.append(j)
+    
+    # Remove duplicates (using values, since index will shift list and distort indexes)
+    for d in duplicates:
+        A.remove(d)
+        
+    print(A)
+           
+        
+A = [2,3,5,5,7,11,11,11,13]
+delDupes(A)
