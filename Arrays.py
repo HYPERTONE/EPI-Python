@@ -153,6 +153,21 @@ A = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
 buy_and_sell_stock_once(A)
 
 
+# This is an uglier solution with a worse runtime.
+def buyStockOnce(A):
+    
+    price = []
+    for i, j in enumerate(A):
+        for x in A[i:]:
+            print('{} - {} = {}'.format(x, j, x - j)) # Sell Price - Buy Price
+            price.append(x - j)
+            
+    return max(price)
+    
+
+A = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
+buyStockOnce(A)
+
 # 
 
 
