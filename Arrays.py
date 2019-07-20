@@ -168,11 +168,55 @@ def buyStockOnce(A):
 A = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
 buyStockOnce(A)
 
-# 
 
-
-
-
-
+# 5.7 - Buy And Sell A Stock Twice
 
 # Write a program that computes the maximum profit that can be made by buying and selling a share at most twice.
+# The second buy must be made on another date after the first sale.
+
+def buy_and_sell_stock_twice(prices):
+
+    max_total_profit, min_price_so_far = 0.0, float('inf')
+    first_buy_sell_profits = [0] * len(prices)
+    # Forward phase. For each day, we record maximum profit if we sell on that
+    # day.
+    for i, price in enumerate(prices):
+        min_price_so_far = min(min_price_so_far, price)
+        max_total_profit = max(max_total_profit, price - min_price_so_far)
+        first_buy_sell_profits[i] = max_total_profit
+
+    # Backward phase. For each day, find the maximum profit if we make the
+    # second buy on that day.
+    max_price_so_far = float('-inf')
+    for i, price in reversed(list(enumerate(prices[1:], 1))):
+        max_price_so_far = max(max_price_so_far, price)
+        max_total_profit = max(
+            max_total_profit,
+            max_price_so_far - price + first_buy_sell_profits[i - 1])
+    return max_total_profit
+
+A = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
+buy_and_sell_stock_twice(A)
+
+# 5.8 - Computing An Alternation
+
+# Write a program that takes an array A of n numbers, and rearranges A's elements to get a new array B having the property
+# that B[0] <= B[1] >= B[2] <= B[3] >= B[4] <= B[5] >= ...
+
+def rearrange(A):
+    
+    for i, j in enumerate(A):
+        A[i:i+2] = sorted(A[i:i+2], reverse= i % 2) # where 0 = False, 1 = True
+        print(sorted(A[i:i+2], reverse=i%2))
+    
+    return A
+
+A = [1, 2, 3, 4, 5, 6]
+rearrange(A)
+
+# i=0; A[0:2] = sorted(1,2 reverse=0) = [1,2] => A=[1,2,3,4,5,6]
+# i=1; A[1:3] = sorted(2,3 reverse=1) = [3,2] => A=[1,3,2,4,5,6]
+# i=2; A[2:4] = sorted(2,4 reverse=0) = [2,4] => A=[1,3,2,4,5,6]
+# i=3; A[3:5] = sorted(4,5 reverse=1) = [5,4] => A=[1,3,2,5,4,6]
+# i=4; A[4:6] = sorted(4,6 reverse=0) = [4,6] => A=[1,3,2,5,4,6]
+# i=5; A[5:7] = sorted(6 reverse=1) = [6] => A=[1,3,2,5,4,6]
