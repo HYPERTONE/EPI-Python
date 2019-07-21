@@ -233,7 +233,7 @@ def primes(n):
 
     checks = []
     primes = []
-    for i in reversed(range(2, n)):
+    for i in range(2, n):
         for j in [2, 3, 5, 7]:
             mod = i % j
             if i == j:
@@ -246,7 +246,7 @@ def primes(n):
 
         checks = []
 
-    return list(reversed(primes))
+    return list(primes)
             
         
 primes(18) --> [2, 3, 5, 7, 11, 13, 17]
