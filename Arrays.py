@@ -250,3 +250,28 @@ def primes(n):
             
         
 primes(18) --> [2, 3, 5, 7, 11, 13, 17]
+
+
+# 5.10 - Permute The Elements Of An Array
+
+# A permutation can be specified byh an array P, where P[i] represents the location of the element at i in the permutation.
+# For example, the array [2, 0, 1, 3] represents the permutation that maps the element at location 0 to location 2, the 
+# element at location 1 to location 0, the element at location 2 to location 1, and keep the element at location 3 unchanged.
+
+# Given an array of n elements and a permutation P, apply P to A.
+
+A = [0, 1, 2, 3, 4]
+P = [4, 2, 3, 1, 0] # Positions
+B = [4, 3, 2, 1, 0] # Positions 2
+
+def permute(A, P):
+    """Apply positions of A to P."""
+    
+    l = [0] * len(P)
+
+    for index, value in enumerate(l):
+        l[P[index]] = A[index]
+    
+    return l
+    
+permute(A, P) -> [4, 3, 1, 2, 0]
