@@ -220,3 +220,33 @@ rearrange(A)
 # i=3; A[3:5] = sorted(4,5 reverse=1) = [5,4] => A=[1,3,2,5,4,6]
 # i=4; A[4:6] = sorted(4,6 reverse=0) = [4,6] => A=[1,3,2,5,4,6]
 # i=5; A[5:7] = sorted(6 reverse=1) = [6] => A=[1,3,2,5,4,6]
+
+
+# 5.9 - Enumerate All Primes to n
+
+# A natural number is called a prime if it is bigger than 1 and has no divisors other than 1 and itself.
+
+# Write a program that takes an integer argument and returns all the primes between 1 and that integer. For example,
+# if the input is 18, you should return [2, 3, 5, 7, 13, 17]
+
+def primes(n):
+
+    checks = []
+    primes = []
+    for i in reversed(range(2, n)):
+        for j in [2, 3, 5, 7]:
+            mod = i % j
+            if i == j:
+                pass
+            else:
+                checks.append(mod)
+
+        if 0 not in checks:
+            primes.append(i)
+
+        checks = []
+
+    return list(reversed(primes))
+            
+        
+primes(18) --> [2, 3, 5, 7, 11, 13, 17]
