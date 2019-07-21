@@ -275,3 +275,19 @@ def permute(A, P):
     return l
     
 permute(A, P) -> [4, 3, 1, 2, 0]
+
+# 5.12 - Sample Offline Data
+
+# Implement an algorithm that takes as input an array of distinct elements and a size, and returns a subset of the given size 
+# of the array elements. All subsets should be equally likely. Return the result in input array itself.
+
+def sampleData(A, size=2):
+    
+    for i in range(size):
+        r = random.randint(i, len(A) - 1)
+        print(r)
+        A[i], A[r] = A[r], A[i]
+    return A
+
+A = [0, 1, 2, 3, 4]
+sampleData(A) # -> [0, 3, 2, 1, 4]
