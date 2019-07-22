@@ -15,7 +15,7 @@
 # return the integer 314.
 
 
-
+# Int To String
 def int2String(x):
     
     negator = False
@@ -34,3 +34,18 @@ def int2String(x):
         
 int2String(123) # -> '123' 
 
+# String To Int
+def string2Int(s):
+    
+    stringy = list(s)
+    
+    result = 0
+    for i in s:
+        result = result*10 + ord(i) - ord('0') # if ord('3') = 51, and ord('0') = 48
+                                                # then 51 - 48 = 3.
+    
+    
+    return result
+
+        
+string2Int('314') # -> 314
