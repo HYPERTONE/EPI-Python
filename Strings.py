@@ -16,3 +16,20 @@
 
 
 
+def int2String(x):
+    
+    negator = False
+    if x < 0:
+        negator = True
+        
+    values = []
+    while True: 
+        values.append(chr(ord('0') + x % 10))
+        x //= 10
+        if x == 0:
+            break
+        
+    return "".join(values[::-1])
+    
+        
+int2String(123) # -> '123' 
