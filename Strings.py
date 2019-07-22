@@ -24,12 +24,13 @@ def int2String(x):
         
     values = []
     while True: 
-        values.append(chr(ord('0') + x % 10))
-        x //= 10
-        if x == 0:
-            break
+        values.append(chr(ord('0') + x % 10)) # Modulo catches the remainder of each value 
+        x //= 10                              # ord() converts a character to its unicode value; char() takes that unicode value and 
+        if x == 0:                            # outputs its unicode character representation. 
+            break                             # Floor division shifts the integer to the left so that we can catch the next value
         
     return "".join(values[::-1])
     
         
 int2String(123) # -> '123' 
+
