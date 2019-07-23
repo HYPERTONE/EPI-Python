@@ -206,3 +206,10 @@ def GenerateWords(digits):
     
 
 GenerateWords('23')  
+
+
+# 6.9 - Convert From Roman To Decimal
+
+# Write a program which takes as input a valid Roman number string s and returns the integer it corresponds to.
+
+
