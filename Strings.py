@@ -166,3 +166,43 @@ def reverseString(s):
     print(f)
     
 reverseString('ram is costly') # -> costly is ram
+
+
+# 6.7 - Compute All Mnemonics For A Phone Number
+
+# Write a program which takes as input a phone number, specified as a string of digits, and returns all possible character 
+# sequences that correspond to the phone number. The cell phone keypad is specified by a mapping that takes a digit and returns the 
+# corresponding set of characters. The character sequences do not have to be legal words or phrases.
+
+pad = {
+    '0': '0',
+    '1': '1',
+    '2': 'abc',
+    '3': 'def',
+    '4': 'ghi',
+    '5': 'jkl',
+    '6': 'mno',
+    '7': 'pqrx',
+    '8': 'tuv',
+    '9': 'wxyz'
+}
+
+
+
+def WordsHelper(digits, word):
+  
+    letters = pad[digits[0]]    
+#     print('letters -> {}'.format(letters))
+    if len(digits) == 1:
+        for letter in letters:
+            print(word + letter) 
+    else:
+        for letter in letters:
+            print('digits: {} wordletter: {}'.format(digits[1:], word+letter))
+            WordsHelper(digits[1:], word+letter)         
+
+def GenerateWords(digits):
+    WordsHelper(digits, '')
+    
+
+GenerateWords('23')  
