@@ -233,3 +233,10 @@ def roman(s):
         
 
 roman('XLI') # -> 41
+
+
+# 6.11 - Write A String Sinusoidally
+
+# Write a program which takes as input a string s and returns the snakestring of s.
+
+
