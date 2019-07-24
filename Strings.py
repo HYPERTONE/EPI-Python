@@ -239,4 +239,4 @@ roman('XLI') # -> 41
 
 # Write a program which takes as input a string s and returns the snakestring of s.
 
-
+# For example, the snakestring for 'Hello World' is 'e lHloWrdlo!"
