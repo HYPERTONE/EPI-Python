@@ -240,3 +240,26 @@ roman('XLI') # -> 41
 # Write a program which takes as input a string s and returns the snakestring of s.
 
 # For example, the snakestring for 'Hello World' is 'e lHloWrdlo!"
+
+def snake(s):
+    
+    result = []
+    
+    # Outputs the first row (s[1], s[5], s[9])...
+    for i in range(1, len(s), 4):
+        result.append(s[i])
+        print(s[i])
+    # Outputs the second row (s[0], s[2], s[4])...
+    for i in range(0, len(s), 2):
+        result.append(s[i])
+        print(s[i])
+    # Outputs the third row (s[3], s[7], s[11])...
+    for i in range(3, len(s), 4):
+        result.append(s[i])
+        print(s[i])
+    return ''.join(result)
+
+
+
+def snakePythonic(s):
+    return s[1::4] + s[::2] + s[3::4]
