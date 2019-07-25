@@ -26,4 +26,61 @@
 
 
 
+class ListNode:
+    def __init__(self, data=0, next_node=None):
+        self.data = data
+        self.next = next_node
+        
+    
+def searchList(L, key):
+    while L and L.data != key:
+        L = L.next
+    # If key was not present in the list, L will have become null
+    return L
 
+# Insert new_node after node
+def insertAfter(node, new_node):
+    new_node.next = node.next
+    node.next = new_node
+
+# Delete a node
+def deleteAfter(node):
+    node.next = node.next.next
+
+# Print
+def printNode(node):
+    temp = node
+    print(temp.data)
+    while temp.next:
+        temp = temp.next
+        print(temp.data)
+        
+# Merge 
+def merge(L1, L2):
+    # Dummy placeholder for the result
+    dummyHead = tail = ListNode()
+
+    while L1 and L2:
+        if L1.data < L2.data:
+            tail.next, L1 = L1, L1.next
+        else:
+            tail.next, L2 = L2, L2.next
+        tail = tail.next
+
+    # Appends the remaining nodes of L1 or L2
+    tail.next = L1 or L2
+    return dummyHead.next
+
+
+    
+
+x = ListNode(1)
+xPrime = ListNode(4)
+y = ListNode(3)
+
+insertAfter(x, xPrime)
+
+# printNode(x) # so now, our output will be 1, 4 
+
+z = merge(x, y) # we merge 1, 4 with 3
+printNode(x) # our output is 1, 3, 4
