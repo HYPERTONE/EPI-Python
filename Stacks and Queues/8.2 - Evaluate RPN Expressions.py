@@ -11,3 +11,25 @@
 
 # Write a program that takes an arithmetical expression in RPN and returns the number that the expression evaluates to.
 
+def evaluate(RPN):
+    intermediate_results = []
+    DELIMITER = ','
+    OPERATORS = {
+                '+' : lambda y, x: x + y,
+                '-' : lambda y, x: x - y,
+                '*' : lambda y, x: x * y,
+                '/' : lambda y, x: int(x / y)
+                }
+    
+    for token in RPN.split(DELIMITER):
+        print('token: {}'.format(token))
+        if token in OPERATORS:
+            print(token)
+            intermediate_results.append(OPERATORS[token](intermediate_results.pop(), intermediate_results.pop()))
+        else: # token is a number
+            intermediate_results.append(int(token))
+            print('inter-results: {}'.format(intermediate_results))
+    return intermediate_results[-1]
+
+myRPN = '3,4,+'
+evaluate(myRPN) # -> 7
