@@ -16,5 +16,13 @@
 
 # A level of a tree is all nodes at the same depth.
 
+A full binary tree is a binary tree in which every node other than the leaves has two children. 
 
+A perfect binary tree is a full binary tree in which all leaves are at the same depth, and in which every parent has two children. A
+perfect binary tree of height h contains exactly 2^(h+1) - 1 nodes, of which 2^h are leaves.
+
+A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left
+as possible. A complete binary tree of n nodes has height [log n].
+
+A key computation on a binary tree is traversing all the nodes in the tree. (Traversing is also called walking.)
 
