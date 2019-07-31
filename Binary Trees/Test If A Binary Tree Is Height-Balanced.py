@@ -15,7 +15,7 @@ class BinaryTreeNode:
 
 lefty = BinaryTreeNode(10)
 righty = BinaryTreeNode(20)
-root = BinaryTreeNode(0, leftBaby, rightBaby)
+root = BinaryTreeNode(0, lefty, righty)
 
 
 def is_balanced_binary_tree(tree):
