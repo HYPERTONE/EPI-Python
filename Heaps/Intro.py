@@ -17,5 +17,5 @@
 
 # So a sample heapq could be [4, 7, 5, 1, 3, 9] where: 
 
-#   The first 2 elements after 4 are >= 4,
-#   The following 4 elements are larger than their parent node (1).
+#   The first 2 elements after 4 are >= 4 (7, 5),
+#   The following 4 elements are larger than their parent node (1, 3, 9).
