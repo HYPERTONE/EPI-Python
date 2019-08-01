@@ -12,3 +12,10 @@
 
 # A heap is a good choice when you need to compute the k largest or k smallest elements in a collection. For the former, 
 # use a min-heap, for the latter use a max-heap.
+
+# In Python, heaps are automatically sorted invariantly using heap[k] <= heap[2*k+1] and heap[k] <= heap[2*k+2] for all k. 
+
+# So a sample heapq could be [4, 7, 5, 1, 3, 9] where: 
+
+#   The first 2 elements after 4 are >= 4,
+#   The following 4 elements are larger than their parent node (1).
