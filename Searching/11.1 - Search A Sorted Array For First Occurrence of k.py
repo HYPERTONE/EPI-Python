@@ -23,7 +23,7 @@ firstOccurrence(A, 108)
 
 
 
-# Binary Approach (cut stuff in half)
+# Binary Approach
 
 def firstOccurrence(A, k):
     
@@ -34,15 +34,16 @@ def firstOccurrence(A, k):
     while left <= right:
         mid = (left + right) // 2
         
-        if k < A[mid]:
+        if k < A[mid]: # k is smaller than the center value, set right equal to the middle - 1 (move left from the center)
+            print(right)
             right = mid - 1
-        elif k == A[mid]:
+        elif k == A[mid]: # once they're equal, choose a side and move towards the end
             result = mid
             right = mid - 1
-        else:
+        else: # k is larger than the center value, set left equal to middle + 1 (move right from the center)
             left = mid + 1
         
     return result
         
 A = [-14, -10, 2, 108, 108, 243, 285, 285, 285, 401]
-firstOccurrence(A, 285)
+firstOccurrence(A, 2)
