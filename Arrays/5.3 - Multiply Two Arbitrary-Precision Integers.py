@@ -4,3 +4,11 @@
 # a negative integer. For example, [-7, 6, 1, 8] represents -7618.
 
 # Write a program that takes two arrays representing integers, and returns an integer representing their product.
+
+def multiplyArrays(A, B):
+    
+    
+    resultA = int("".join(map(str, A)))
+    resultB = int("".join(map(str, B)))
+    
+    return resultA * resultB
