@@ -27,16 +27,16 @@
 
 # A hash table is a good data structure to represent a dictionary, i.e., a set of strings. 
 
-Consider a class that represents contacts. Assume each contact is a string. Suppose that the individual contacts are to be stored in a 
-list and it's possible that the list contains duplicates. Two contacts should be equal if they contain the same set of strings, 
-regardless of the ordering of the strings within the underlying list. Multiplicity is not important, i.e., three repetitions of the 
-same contact is the same as a single instance of that contact.
+# Consider a class that represents contacts. Assume each contact is a string. Suppose that the individual contacts are to be stored in a 
+# list and it's possible that the list contains duplicates. Two contacts should be equal if they contain the same set of strings, 
+# regardless of the ordering of the strings within the underlying list. Multiplicity is not important, i.e., three repetitions of the 
+# same contact is the same as a single instance of that contact.
 
-In order to be able to store contacts in a hash table, we first need to explicitly define equality, 
-which we can do by forming sets from the lists and comparing the sets.
+# In order to be able to store contacts in a hash table, we first need to explicitly define equality, 
+# which we can do by forming sets from the lists and comparing the sets.
 
-In our context, this implies that the hash function should depend on the strings present, but not their ordering; 
-it should also consider only one copy if a string appears in duplicate form.
+# In our context, this implies that the hash function should depend on the strings present, but not their ordering; 
+# it should also consider only one copy if a string appears in duplicate form.
 
 
 class ContactList:
