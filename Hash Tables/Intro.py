@@ -25,4 +25,4 @@
 # As a rule, you should avoid using mutable objects as keys.
 
 
-
+# A hash table is a good data structure to represent a dictionary, i.e., a set of strings. 
