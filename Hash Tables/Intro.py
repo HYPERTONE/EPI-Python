@@ -60,3 +60,9 @@ class ContactList:
         """
         return list(set(contacts))
 
+
+    
+# Hash Table Libraries
+
+# There are multiple hash table-based data structures commonly used in Python:
+# - set, dict, collections.defaultdict, and collections.Counter
