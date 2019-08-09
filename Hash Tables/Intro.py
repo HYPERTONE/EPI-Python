@@ -32,3 +32,31 @@ list and it's possible that the list contains duplicates. Two contacts should be
 regardless of the ordering of the strings within the underlying list. Multiplicity is not important, i.e., three repetitions of the 
 same contact is the same as a single instance of that contact.
 
+In order to be able to store contacts in a hash table, we first need to explicitly define equality, 
+which we can do by forming sets from the lists and comparing the sets.
+
+In our context, this implies that the hash function should depend on the strings present, but not their ordering; 
+it should also consider only one copy if a string appears in duplicate form.
+
+
+class ContactList:
+    def __init__(self, names):
+        """
+        names is a list of strings.
+        """
+        self.names = names
+        
+    def __hash__(self):
+        # Conceptually we want to hash the set of names. Since the set type is mutable, it cannot be hashed.
+        # Therefore we use frozenset.
+        return hash(frozenset(self.names))
+    
+    def __eq__(self, other):
+        return set(self.names) == set(other.names)
+    
+    def merge_contact_lists(contacts):
+        """
+        contacts is a list of ContactList.
+        """
+        return list(set(contacts))
+
