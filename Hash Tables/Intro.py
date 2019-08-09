@@ -26,3 +26,9 @@
 
 
 # A hash table is a good data structure to represent a dictionary, i.e., a set of strings. 
+
+Consider a class that represents contacts. Assume each contact is a string. Suppose that the individual contacts are to be stored in a 
+list and it's possible that the list contains duplicates. Two contacts should be equal if they contain the same set of strings, 
+regardless of the ordering of the strings within the underlying list. Multiplicity is not important, i.e., three repetitions of the 
+same contact is the same as a single instance of that contact.
+
