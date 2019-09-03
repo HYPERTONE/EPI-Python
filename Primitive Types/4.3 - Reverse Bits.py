@@ -14,5 +14,5 @@ def reverseBit(num):
 # and a 0 when num had a zero. The loop terminates because num gets shifted until it becomes 0.
 
 
-Note that this is reversing the base 2 value of the integer. So if we input an integer of 123, its binary value is 1111011.
-The reverse of 1111011 is 1101111 which when converted to an integer is actually 111.
+# Note that this is reversing the base 2 value of the integer. So if we input an integer of 123, its binary value is 1111011.
+# The reverse of 1111011 is 1101111 which when converted to an integer is actually 111.
