@@ -1,5 +1,5 @@
 
-# Implement an integer to string conversion function, an da string to integer conversion function. For example, if the input to the first
+# Implement an integer to string conversion function, and a string to integer conversion function. For example, if the input to the first
 # function is the integer 314, it should return the string '314' and if the input to the second function is the string '314' it should
 # return the integer 314.
 
