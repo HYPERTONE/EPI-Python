@@ -1,2 +1,2 @@
 # EPI-Python
-Elements of Programming Interviews - Python
+Elements of Programming - Python
